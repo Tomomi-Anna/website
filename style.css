@@ -1,0 +1,792 @@
+/* =======================================
+   BASE STYLES
+======================================= */
+
+body {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =======================================
+   NAVIGATION BAR
+======================================= */
+
+#seite-tomomiannasakai {
+    background-color: #f0f0f0; /* Beispiel: Hellerer Hintergrund nur auf dieser Seite */
+  
+}
+
+/* Styling nur für H1-Überschriften auf dieser Seite */
+#seite-tomomiannasakai h1 {
+    color: rgb(0, 0, 0);
+}
+
+/* =======================================
+   PROJECT PAGE STYLES OVERALL
+======================================= */
+
+
+.portfolio_title {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%); 
+  z-index: 10;
+  margin: 0;
+}
+
+.portfolio_blurry-image {
+  grid-area: blurry;
+  margin-bottom: 250px;
+  margin-top: 250px;
+  background-size: cover;
+  background-position: top;
+  position: relative; 
+  width: 100%;
+  height: 300px;
+  filter: blur(20px);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+}
+
+
+.portfolio_text {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 50px 0;
+  grid-area: text; 
+  z-index: 10;
+   margin-top: 300px;
+  margin-bottom: 200px; 
+
+  
+}
+
+.portfolio_text_info {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 12px;
+  text-align: center;
+  padding: 15px;
+  grid-area: text_info; 
+  z-index: 10;
+  margin-top: 0px;
+  margin-bottom: 200px;
+  
+}
+
+
+
+.home-grid {
+  display: grid;
+  padding: 15px;
+}
+
+
+
+
+
+/* =======================================
+   MENU STYLES
+======================================= */
+
+.nav_portfolio {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  padding: 15px;
+  top: 10px;
+  position: fixed;
+  width: auto;
+  z-index: 30;
+  
+}
+
+.nav_portfolio:hover {
+  text-decoration-color: black; 
+}
+
+
+.nav_tomomiannasakai {
+     font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  top: 10px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 30;
+}
+
+.nav_tomomiannasakai:hover {
+  text-decoration-color: black; 
+}
+
+.nav_de-en {
+  font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: right;
+  padding: 15px;
+  top: 10px;
+  right: 0;
+  position: fixed;
+  width: auto;
+  z-index: 30;
+}
+
+.nav_de-en:hover {
+  text-decoration-color: black; 
+}
+
+
+
+.unterstrichen-wort, 
+.unterstrichen-wort:link, 
+.unterstrichen-wort:visited {
+
+    color: black; 
+    text-decoration: none; 
+    text-decoration: underline; 
+    text-decoration-color: transparent; 
+}
+.unterstrichen-wort:active,
+.unterstrichen-wort:focus {
+    
+    text-decoration-color: transparent; 
+    color: black; 
+}
+.unterstrichen-wort:hover {
+    text-decoration-color: black;
+}
+
+
+.fixed-menu-container {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 20; 
+    border-bottom: 60px solid rgb(255, 255, 255); 
+    background-color: white; 
+}
+
+
+/* =======================================
+   CHAMAELEON PAGE
+======================================= */
+
+.project-01-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    grid-template-rows: 
+        1000px /* Höhe der Kopie-Reihe (Bildhöhe) */
+        600px /* Höhe der Text-Reihe (Platz für den Text + Margins) */
+        1125px /* Höhe der Blickwechselentwurf-Reihe */
+        repeat(3, auto); /* Restl;
+    
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    " blurry blurry blurry"
+    ". text ."
+    ". blickwechselentwurf ."
+    ". citylightmockup-1 ."
+    ". citylightmockup-2 ."
+    ". citylightmockup-3 ."
+    ". citylightmockup-4 .";
+}
+
+
+.portfolio_blickwechselentwurf {
+  grid-area: blickwechselentwurf;
+  margin-bottom: 25px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  
+}
+
+.portfolio_citylightmockup-1 {
+    grid-area: citylightmockup-1;
+    margin-bottom: 25px;
+   
+    margin-top: 25px;
+}
+
+
+.portfolio_citylightmockup-2 {
+    grid-area: citylightmockup-2;
+    margin-bottom: 25px;
+
+}
+
+.portfolio_citylightmockup-3 {
+    grid-area: citylightmockup-3;
+    margin-bottom: 25px;
+}
+
+.portfolio_citylightmockup-4 {
+    grid-area: citylightmockup-4;
+    margin-bottom: 25px;
+}
+
+
+/* =======================================
+   ABOUT PAGE
+======================================= */
+
+.about-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+
+    
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+  grid-template-areas: 
+    " blurry blurry blurry "
+    ". text ."
+    ". text_info ."
+    ". about_selbstportrait ."
+   ;
+}
+
+.about_title {
+    font-family: "Fragment Mono", sans-serif;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%); 
+  z-index: 10;
+  margin: 0;
+}
+
+.about_selbstportrait-kopie {
+    grid-area: about_selbstportrait-kopie;
+    margin-bottom: 500px;
+  margin-top: 350px;
+  background-size: cover;
+  background-position: top;
+  position: relative; 
+  width: 100%;
+  height: 300px;
+  filter: blur(20px);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.about_text {
+    grid-area: about_text;
+    font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  z-index: 10;
+  margin-top: 400px;
+  margin-bottom: 400px;
+}
+
+.about_selbstportrait {
+    grid-area: about_selbstportrait;
+    
+}
+
+/* =======================================
+   TYPO IM RAUM PAGE
+======================================= */
+
+.project-02-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". bildserie-1 ."
+    ". bildserie-2 ."
+    ". bildserie-3 ."
+    ;
+}
+
+.portfolio_bildserie-1 {
+  
+  grid-area: bildserie-1;
+
+}
+
+.portfolio_bildserie-2 {
+    grid-area: bildserie-2;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.portfolio_bildserie-3 {
+    grid-area: bildserie-3;
+}
+
+/* =======================================
+   Prepress PAGE
+======================================= */
+
+.project-03-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". prepress-1 ."
+    ". prepress-2 ."
+    ". prepress-3 ."
+    ; }
+
+    .portfolio_Prepress-1 {
+        grid-area: prepress-1;
+}
+    .portfolio_Prepress-2 {
+    grid-area: prepress-2;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+    .portfolio_Prepress-3 {
+        grid-area: prepress-3;
+}
+
+/* =======================================
+   Prepress PAGE
+======================================= */
+
+.project-04-grid {
+   display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". layout-1 ."
+    ". layout-2 ."
+    ". layout-3 ."
+    ". layout-4 ."
+    ". layout-5 ."
+    ". layout-6 ."
+    ". layout-7 ."
+    ". layout-8 ."
+    ". layout-9 ."
+    ; }
+
+    .layout-1 {
+    grid-area: layout-1;
+    margin-bottom: 25px;
+   
+}
+    .layout-2 {
+    grid-area: layout-2;
+    margin-bottom: 25px;
+}
+    .layout-3 {
+    grid-area:layout-3;
+    margin-bottom: 25px;
+}
+    .layout-4 {
+    grid-area:layout-4;
+    margin-bottom: 25px;
+}
+    .layout-5 {
+    grid-area:layout-5;
+    margin-bottom: 25px;
+}
+    .layout-6 {
+    grid-area:layout-6;
+    margin-bottom: 25px;
+}
+    .layout-7 {
+    grid-area:layout-7;
+    margin-bottom: 25px;
+}
+    .layout-8 {
+    grid-area:layout-8;
+    margin-bottom: 25px;
+}
+    .layout-9 {
+    grid-area:layout-9;
+    margin-bottom: 25px;
+}
+
+
+
+/* =======================================
+   Parisprojekt STYLES
+======================================= */
+
+.project-05-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". bp-1 ."
+    ". bp-2 ."
+    ". bp-3 ."
+    ". bp-4 ."
+    ". bp-5 ."
+    ". bp-6 ."
+    ". bp-7 ."
+    ". bp-8 ."
+    ;
+}
+
+.bild_paris-1 {
+    grid-area: bp-1;
+    margin-bottom: 25px;
+   
+}
+.bild_paris-2 {
+    grid-area: bp-2;
+    margin-bottom: 25px;
+   
+}
+.bild_paris-3 {
+    grid-area: bp-3;
+    margin-bottom: 25px;
+}
+.bild_paris-4 {
+    grid-area: bp-4;
+    margin-bottom: 25px;
+}
+.bild_paris-5 {
+    grid-area: bp-5;
+    margin-bottom: 25px;
+}
+.bild_paris-6 {
+    grid-area: bp-6;
+    margin-bottom: 25px;
+}
+.bild_paris-7 {
+    grid-area: bp-7;
+    margin-bottom: 25px;
+}
+.bild_paris-8 {
+    grid-area: bp-8;
+    margin-bottom: 25px;
+}
+
+
+/* =======================================
+   Riders STYLES
+======================================= */
+
+.project-06-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". riders-1 ."
+    ". riders-2 ."
+    ". riders-3 ."
+    ". riders-4 ."
+    ". riders-5 ."
+    ". riders-6 ."
+    ". riders-7 ."
+    ". riders-8 ."
+    ". riders-9 ."
+    ;
+}
+
+.riders-1 {
+    grid-area: riders-1;
+    margin-bottom: 25px;
+   
+}
+.riders-2 {
+    grid-area: riders-2;
+    margin-bottom: 25px;
+}
+.riders-3 {
+    grid-area: riders-3;
+    margin-bottom: 25px;
+}
+.riders-4 {
+    grid-area: riders-4;
+    margin-bottom: 25px;
+}
+.riders-5 {
+    grid-area: riders-5;
+    margin-bottom: 25px;
+}
+.riders-6 {
+    grid-area: riders-6;
+    margin-bottom: 25px;
+}
+.riders-7 {
+    grid-area: riders-7;
+    margin-bottom: 25px;
+}               
+
+.riders-8 {
+    grid-area: riders-8;
+    margin-bottom: 25px;
+
+}
+
+.riders-9 {
+    grid-area: riders-9;
+    margin-bottom: 25px;
+}
+
+/* =======================================
+  London STYLES
+======================================= */
+
+.project-07-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 400px)  minmax(auto, 400px) 1fr; 
+    gap: 25px; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry blurry"
+    ". text text ."
+    ". london-1 london-2 ."
+    ". london-3 london-4 ."
+    ". london-5 london-6 ."
+    ". london-7 london-8 ."
+    ". london-9 london-10 ."
+    ". london-11 london-12 ."
+    ". london-13 london-14 ."
+    ". london-15 london-16 ."
+    ". london-17 london-18 ."
+    ". london-19 london-20 ."
+    ". london-21 london-22 ."
+    ". london-23 london-24 ."
+    ; }
+
+
+    .london-1 {
+    grid-area: london-1;
+    
+    height: 400px;
+}   
+    .london-2 {
+    grid-area: london-2;
+    
+    height: 400px;
+}
+    .london-3 {
+    grid-area: london-3;
+    
+    height: 400px;
+}
+    .london-4 {
+    grid-area: london-4;
+    
+    height: 400px;
+}
+    .london-5 {
+    grid-area: london-5;
+    
+    height: 400px;
+}
+    .london-6 {
+    grid-area: london-6;
+    
+    height: 400px;
+}
+    .london-7 {
+    grid-area: london-7;
+   
+    height: 400px;
+}
+    .london-8 {
+    grid-area: london-8;
+    
+    height: 400px;
+}
+    .london-9 {
+    grid-area: london-9;
+    width: 400px;
+    height: 400px;
+}
+    .london-10 {
+    grid-area: london-10;
+    
+    height: 400px;
+}  
+.london-11 {
+    grid-area: london-11;
+   
+    height: 400px;
+}
+.london-12 {  
+    grid-area: london-12;
+    
+    height: 400px;
+}
+.london-13 {
+    grid-area: london-13;
+      
+    height: 400px;  
+}
+.london-14 {
+    grid-area: london-14;
+  
+    height: 400px;
+}
+.london-15 {
+    grid-area: london-15;
+   
+    height: 400px;
+}   
+.london-16 {
+    grid-area: london-16;
+    
+    height: 400px;
+}
+.london-17 {
+    grid-area: london-17;
+    
+    height: 400px;
+}       
+.london-18 {
+    grid-area: london-18;
+    margin-bottom: 25px;
+    
+}       
+.london-19 {
+    grid-area: london-19;
+   
+    height: 400px;
+}    
+.london-20 {
+    grid-area: london-20;
+    
+    height: 400px;
+}       
+.london-21 {        
+    grid-area: london-21;
+    
+    height: 400px;
+}       
+.london-22 {
+    grid-area: london-22;
+     
+    height: 400px;      
+}       
+.london-23 {
+    grid-area: london-23;
+  
+    height: 400px;      
+}    
+.london-24 {
+    grid-area: london-24;
+    /* margin-bottom: 25px;   */
+    height: 400px;      
+}
+
+/* =======================================
+  hapek STYLES
+======================================= */
+
+.project-08-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". hapek-1 ."
+    ". hapek-2 ."
+    ". hapek-3 ."
+    ". hapek-4 ."
+    ". hapek-5 ."
+    ". hapek-6 ."
+    ". hapek-7 ."
+    ". hapek-8 ."
+    ;
+}
+
+
+
+
+.hapek-1 {
+    grid-area: hapek-1;
+    margin-bottom: 25px;
+   
+}
+.hapek-2 {
+    grid-area: hapek-2;
+    margin-bottom: 25px;
+}
+.hapek-3 {
+    grid-area: hapek-3;
+    margin-bottom: 25px;
+}
+.hapek-4 {
+    grid-area: hapek-4;
+    margin-bottom: 25px;
+}  
+.hapek-5 {
+    grid-area: hapek-5;
+    margin-bottom: 25px;
+}   
+.hapek-6 {
+    grid-area: hapek-6;
+    margin-bottom: 25px;
+}
+.hapek-7 {
+    grid-area: hapek-7;
+    margin-bottom: 25px;
+}
+.hapek-8 {
+    grid-area: hapek-8; 
+    margin-bottom: 25px;
+}
+    
