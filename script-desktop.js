@@ -9,6 +9,7 @@ let isAnimating = false;
 let rafId = null;
 let velocityFadeTimeout = null;
 let prefersReducedMotion = false;
+let currentSharpPairIndex = -1; // Aktuell scharfes Paar
 
 // Touch-Gesten Variablen
 let touchStartY = 0;
@@ -42,6 +43,10 @@ function getResponsiveConfig() {
         OPACITY_FADE_DIVISOR: 400,
         OPACITY_DEPTH_THRESHOLD: 10,
         
+        // SCHÄRFE-ZONE KONSTANTEN
+        SHARP_ZONE_MIN: -0.3,  // Paar darf leicht "hinter" dem Fokus sein
+        SHARP_ZONE_MAX: 0.8,   // Aber nicht zu weit vorne (bevor es austritt)
+        
         // BEWEGUNGS KONSTANTEN
         LATERAL_ACCELERATION: isSmallMobile ? 2.0 : 4.0,
         FORWARD_EXTRA_MOVE: 10,
@@ -65,6 +70,58 @@ function getResponsiveConfig() {
 }
 
 let CONFIG = getResponsiveConfig();
+
+/**
+ * Bestimmt, welches Bildpaar scharf sein soll
+ * @returns {number} Index des scharfen Paares oder -1
+ */
+function determineSharpPair() {
+    let candidateIndex = -1;
+    let bestDepthPosition = Infinity;
+    
+    // Finde das vorderste Paar, das noch in der Schärfe-Zone ist
+    galleryPairs.forEach((pair, index) => {
+        const depthPosition = index - scrollPosition;
+        
+        // Ist das Paar in der Schärfe-Zone?
+        if (depthPosition >= CONFIG.SHARP_ZONE_MIN && depthPosition <= CONFIG.SHARP_ZONE_MAX) {
+            // Ist es näher am Fokus als der bisherige Kandidat?
+            if (Math.abs(depthPosition) < Math.abs(bestDepthPosition)) {
+                bestDepthPosition = depthPosition;
+                candidateIndex = index;
+            }
+        }
+    });
+    
+    return candidateIndex;
+}
+
+/**
+ * Macht ein Bildpaar scharf
+ * @param {HTMLElement} pairElement - Das Bildpaar-Element
+ * @param {Object} style - Das berechnete Style-Objekt
+ */
+function makeSharp(pairElement, style) {
+    // Transform auf exakte ganzzahlige Werte snappen
+    const translateZ = Math.round(parseFloat(style.transform.match(/translateZ\(([^)]+)\)/)?.[1] || 0));
+    const scale = parseFloat(style.transform.match(/scale\(([^)]+)\)/)?.[1] || 1);
+    
+    pairElement.style.transform = `translateZ(${translateZ}px) scale(${scale})`;
+    pairElement.style.filter = 'none';
+    pairElement.style.willChange = 'auto';
+}
+
+/**
+ * Macht ein Bildpaar wieder unscharf (normaler Zustand)
+ * @param {HTMLElement} pairElement - Das Bildpaar-Element  
+ * @param {Object} style - Das berechnete Style-Objekt
+ */
+function makeUnsharp(pairElement, style) {
+    pairElement.style.transform = style.transform;
+    if (!prefersReducedMotion) {
+        pairElement.style.filter = style.filter;
+    }
+}
 
 // --- HILFSFUNKTIONEN (Kinematik) ---
 
@@ -157,24 +214,31 @@ function applyAllStyles() {
     }
     
     rafId = requestAnimationFrame(() => {
-        galleryPairs.forEach(pair => {
+        // Bestimme das scharfe Paar
+        const sharpPairIndex = determineSharpPair();
+        const sharpPairChanged = sharpPairIndex !== currentSharpPairIndex;
+        
+        galleryPairs.forEach((pair, index) => {
             const pairIndex = parseInt(pair.dataset.pairIndex);
             const style = getPairStyle(pair, pairIndex);
+            const isSharpPair = (pairIndex === sharpPairIndex);
 
             // Apply Z-axis transformations to the PAIR
-            pair.style.transform = style.transform;
-            
-            if (!prefersReducedMotion) {
-                pair.style.filter = style.filter;
+            if (isSharpPair) {
+                // Dieses Paar wird scharf gemacht
+                makeSharp(pair, style);
+            } else {
+                // Alle anderen Paare bleiben unscharf
+                makeUnsharp(pair, style);
             }
             
             pair.style.opacity = style.opacity;
             pair.style.zIndex = style.zIndex;
 
             // Dynamische will-change Aktivierung nur während Animation
-            if (isAnimating) {
+            if (isAnimating && !isSharpPair) {
                 pair.style.willChange = 'transform, filter, opacity';
-            } else {
+            } else if (!isSharpPair) {
                 pair.style.willChange = 'auto';
             }
 
@@ -191,6 +255,9 @@ function applyAllStyles() {
                 rightWrapper.style.transform = `translateX(${dynamicX}px)`;
             }
         });
+        
+        // Update current sharp pair tracking
+        currentSharpPairIndex = sharpPairIndex;
         
         updateIndicators();
         rafId = null;
@@ -304,7 +371,7 @@ function setupScrollTrigger() {
     const panels = createScrollPanels();
     // KORREKTUR: scrollPosition geht von 0 bis (totalPairs - 1)
     // Aber wir brauchen totalPairs Panels für genug Scroll-Raum
-    const maxScroll = totalPairs - 1;
+    const maxScroll = totalPairs;
     const totalScrollHeight = (totalPairs + 1) * window.innerHeight;
 
     ScrollTrigger.create({

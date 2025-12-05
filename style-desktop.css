@@ -123,6 +123,7 @@ body {
     transition: transform 300ms ease-out, filter 300ms ease-out, opacity 300ms ease-out;
     transform-style: preserve-3d;
     outline: none;
+    pointer-events: none;
 }
 
 /* Focus State für Accessibility */
@@ -140,6 +141,7 @@ body {
 .image-wrapper {
     width: 100%;
     display: block;
+    pointer-events: initial;
 }
 
 .image-wrapper a {
