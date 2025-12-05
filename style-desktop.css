@@ -285,3 +285,90 @@ body {
 /* -----------------------------------
 Hover titel effekt
 ----------------------------------- */ 
+/* =======================================
+   MOBILE TYPOGRAFIE — bis 768px
+======================================= */
+@media (max-width: 768px) {
+
+  /* Grundschrift kleiner */
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Allgemeine Text-Elemente */
+  p, li, a, span, .indicator-text {
+    font-size: 0.85rem !important;  /* ca. 13–14px */
+  }
+
+  /* Preloader */
+  .preloader-text {
+    font-size: 0.75rem !important;
+  }
+
+  /* Indikatoren */
+  .indicator-text {
+    font-size: 0.75rem !important;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 1.6rem !important; /* ~26px */
+  }
+  h2 {
+    font-size: 1.3rem !important; /* ~21px */
+  }
+  h3 {
+    font-size: 1.1rem !important; /* ~18px */
+  }
+
+  /* Button-ähnliche Elemente / Interaktion */
+  .indicator-dot-active {
+    width: 1.6rem;
+  }
+  .indicator-dot-inactive {
+    width: 0.25rem;
+  }
+}
+
+
+/* =======================================
+   EXTRA SMALL — bis 480px
+======================================= */
+@media (max-width: 480px) {
+
+  /* Grundschrift sehr kompakt */
+  body {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  /* Standard-Text */
+  p, li, a, span, .indicator-text {
+    font-size: 0.8rem !important; /* ~12–13px */
+  }
+
+  /* Preloader */
+  .preloader-text {
+    font-size: 0.7rem !important;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 1.3rem !important; /* ~21px */
+  }
+  h2 {
+    font-size: 1.1rem !important; /* ~18px */
+  }
+  h3 {
+    font-size: 1rem !important;   /* ~16px */
+  }
+
+  /* Indikatoren */
+  .indicator-dot-active {
+    width: 1.3rem;
+  }
+  .indicator-dot-inactive {
+    width: 0.2rem;
+  }
+}

@@ -917,3 +917,231 @@ img {
     grid-area: zeitung-9; 
     margin-bottom: 25px;
 }
+
+/* =======================================
+   MOBILE VERSION — GLOBAL FIXES
+======================================= */
+
+/* =======================================
+   MOBILE — bis 768px
+======================================= */
+
+@media (max-width: 768px) {
+
+  /* Grundtypografie */
+  body {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  /* Standardtext */
+  p, li, a, span {
+    font-size: 0.9rem;
+  }
+
+  /* Navigation */
+  .nav_portfolio,
+  .nav_tomomiannasakai,
+  .nav_de-en,
+  .unterstrichen-wort {
+    font-size: 12px !important;
+    padding: 10px;
+  }
+
+  /* Große Titles */
+  .portfolio_title,
+  .about_title {
+    font-size: 28px;
+    top: 45%;
+  }
+
+  /* Textblöcke kompakter */
+  .portfolio_text,
+  .portfolio_text_info,
+  .portfolio_text_faehighkeiten,
+  .portfolio_text_sprachen,
+  .text_info,
+  .about_text {
+    font-size: 14px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 20px;
+  }
+
+  /* Info-Text kleiner */
+  .portfolio_text_info {
+    font-size: 12px;
+  }
+
+  /* Blur-Header */
+  .portfolio_blurry-image,
+  .about_selbstportrait-kopie {
+    height: 180px;
+    margin-top: 120px;
+    margin-bottom: 150px;
+  }
+
+  /* Bilder fließen */
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 1-Spalten Layout für alle Projekte */
+  .project-01-grid,
+  .project-02-grid,
+  .project-03-grid,
+  .project-04-grid,
+  .project-05-grid,
+  .project-06-grid,
+  .project-07-grid,
+  .project-08-grid,
+  .project-09-grid,
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+    padding-top: 100px;
+  }
+
+  /* Areas linear */
+  .project-01-grid,
+  .project-02-grid,
+  .project-03-grid,
+  .project-04-grid,
+  .project-05-grid,
+  .project-06-grid,
+  .project-08-grid,
+  .project-09-grid,
+  .about-grid {
+    grid-template-areas:
+      "blurry"
+      "text"
+      "faehigkeiten"
+      "sprachen"
+      "text_info"
+      "about_selbstportrait"
+      "blickwechselentwurf"
+      "citylightmockup-1"
+      "citylightmockup-2"
+      "citylightmockup-3"
+      "citylightmockup-4";
+  }
+
+  /* Spezieller Fix — London Projekt */
+  .project-07-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "blurry"
+      "text"
+      "london-1"
+      "london-2"
+      "london-3"
+      "london-4"
+      "london-5"
+      "london-6"
+      "london-7"
+      "london-8"
+      "london-9"
+      "london-10"
+      "london-11"
+      "london-12"
+      "london-13"
+      "london-14"
+      "london-15"
+      "london-16"
+      "london-17"
+      "london-18"
+      "london-19"
+      "london-20"
+      "london-21"
+      "london-22"
+      "london-23"
+      "london-24";
+  }
+
+  .project-07-grid div[class^="london-"] {
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+
+
+
+
+/* =======================================
+   EXTRA SMALL — bis 480px
+======================================= */
+
+@media (max-width: 480px) {
+
+  /* Grundtypografie */
+  body {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  p, li, a, span {
+    font-size: 0.8rem;
+  }
+
+  /* Menü */
+  .nav_portfolio,
+  .nav_tomomiannasakai,
+  .nav_de-en,
+  .unterstrichen-wort {
+    font-size: 11px !important;
+    padding: 8px;
+  }
+
+  /* Titel */
+  .portfolio_title,
+  .about_title {
+    font-size: 22px;
+    top: 42%;
+  }
+
+  /* Textblöcke */
+  .portfolio_text,
+  .portfolio_text_info,
+  .portfolio_text_faehighkeiten,
+  .portfolio_text_sprachen,
+  .text_info,
+  .about_text {
+    font-size: 12px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 15px;
+  }
+
+  .portfolio_text_info {
+    font-size: 11px;
+  }
+
+  /* Blur-Banner */
+  .portfolio_blurry-image,
+  .about_selbstportrait-kopie {
+    height: 140px;
+    margin-top: 100px;
+    margin-bottom: 120px;
+  }
+
+  /* Projektgrids */
+  .project-01-grid,
+  .project-02-grid,
+  .project-03-grid,
+  .project-04-grid,
+  .project-05-grid,
+  .project-06-grid,
+  .project-07-grid,
+  .project-08-grid,
+  .project-09-grid,
+  .about-grid {
+    padding-top: 80px;
+    gap: 10px;
+  }
+
+  /* London extra small fix */
+  .project-07-grid div[class^="london-"] {
+    height: auto !important;
+  }
+}
