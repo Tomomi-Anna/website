@@ -73,7 +73,7 @@ img {
   padding: 50px 0;
   grid-area: text; 
   z-index: 10;
-  margin-top: 350px;
+  margin-top: 400px;
   margin-bottom: 200px; 
 
   
@@ -87,8 +87,28 @@ img {
   grid-area: text_info; 
   z-index: 10;
   margin-top: -150px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   
+}
+.portfolio_text_faehighkeiten {
+   font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 50px 0;
+  grid-area: sprachen; 
+  z-index: 10;
+  margin-top: -100px;
+  margin-bottom: 125px; 
+}
+.portfolio_text_sprachen {
+   font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 50px 0;
+  grid-area: sprachen; 
+  z-index: 10;
+  margin-top: -50px;
+  margin-bottom: 100px; 
 }
 
 .text_info {
@@ -288,8 +308,11 @@ img {
   grid-template-areas: 
     " blurry blurry blurry "
     ". text ."
+    ". faehigkeiten ."
+    ". sprachen ."
     ". text_info ."
     ". about_selbstportrait ."
+   
    ;
 }
 
@@ -338,6 +361,27 @@ img {
     
 }
 
+/* .portfolio_faehigkeiten {
+    font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  z-index: 10;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  grid-area: faeigkeiten;
+}
+
+.portfolio_sprachen {
+    font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+  z-index: 10;
+  margin-top: 25px;
+  margin-bottom: 200px;
+  grid-area: sprachen;
+} */
 /* =======================================
    TYPO IM RAUM PAGE
 ======================================= */
