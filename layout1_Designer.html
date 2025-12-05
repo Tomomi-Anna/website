@@ -18,71 +18,112 @@
     />
   </head>
   <body>
+    <div class="fixed-menu-container">
+      <div class="nav_portfolio">
+        <a href="index.html" class="unterstrichen-wort">Portfolio</a>
+      </div>
+      <div class="nav_tomomiannasakai">
+        <a href="about.html" class="unterstrichen-wort">Tomomi Anna Sakai</a>
+      </div>
+      <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
+    </div>
 
-<div class="fixed-menu-container">
-  <div class="nav_portfolio">
-    <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
-    <div class="nav_tomomiannasakai">
-    <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
-  
-
-</div>
-
-
-  
-<div class="project-04-grid">
-
-   
-
-    <h1 class="portfolio_title">Designerleuchten layouten</h1>
-    <div class="portfolio_blurry-image">
+    <div class="project-04-grid">
+      <h1 class="portfolio_title" data-key="title_project">
+        Designerleuchten layouten
+      </h1>
+      <div class="portfolio_blurry-image">
         <img src="Bilder/Layout1_Kopie/Layout_1-3_Kopie.jpg" />
-    </div>
-    <div class="portfolio_text">
-        <p>Durch Recherche und Entwurfsprozess kann man ein Layout designen, das Designerleuchten passend und anregend darstellt. Dabei wurde Wert auf eine klare Struktur, Typografie und Bildanordnung gelegt. Der kompakte Katalog zeigt drei verschiedene Lampen, jede auf einer eigenen Doppelseite mit Hintergrundgeschichte und einem klaren, durchgängigen Aufbau.
-        Die jeweiligen Designer werden in einer eigenen Infobox vorgestellt. Das Projekt verbindet Informationsdesign mit einer ästhetischen Präsentation und schafft einen ruhigen, wirkungsvollen Gesamteindruck. Das Dossier folgt das Ziel, Interesse und Bedeutung für Designobjekte, insbesondere für Leuchten, zu wecken.
-</p>
-    </div>
-    
-    
-    <div class="layout-1">
+      </div>
+      <div class="portfolio_text">
+        <p data-key="text_info">
+          Durch Recherche und Entwurfsprozess kann man ein Layout designen, das
+          Designerleuchten passend und anregend darstellt. Dabei wurde Wert auf
+          eine klare Struktur, Typografie und Bildanordnung gelegt. Der kompakte
+          Katalog zeigt drei verschiedene Lampen, jede auf einer eigenen
+          Doppelseite mit Hintergrundgeschichte und einem klaren, durchgängigen
+          Aufbau. Die jeweiligen Designer werden in einer eigenen Infobox
+          vorgestellt. Das Projekt verbindet Informationsdesign mit einer
+          ästhetischen Präsentation und schafft einen ruhigen, wirkungsvollen
+          Gesamteindruck. Das Dossier folgt das Ziel, Interesse und Bedeutung
+          für Designobjekte, insbesondere für Leuchten, zu wecken.
+        </p>
+      </div>
+
+      <div class="layout-1">
         <img src="Bilder/Layout1_Kopie/Layout_1-1.jpg" />
-    </div>
-    
-    <div class="layout-2">
+      </div>
+
+      <div class="layout-2">
         <img src="Bilder/Layout1_Kopie/Layout_1-2.jpg" />
-    </div>
-    <div class="layout-3">
+      </div>
+      <div class="layout-3">
         <img src="Bilder/Layout1_Kopie/Layout_1-3.jpg" />
-    </div>
+      </div>
 
-    <div class="layout-4">
+      <div class="layout-4">
         <img src="Bilder/Layout1_Kopie/Layout_1-4.jpg" />
-    </div>
+      </div>
 
-    <div class="layout-5">
+      <div class="layout-5">
         <img src="Bilder/Layout1_Kopie/Layout_1-5.jpg" />
-    </div>
-    
-    <div class="layout-6">
+      </div>
+
+      <div class="layout-6">
         <img src="Bilder/Layout1_Kopie/Layout_1-6.jpg" />
-    </div>
-    <div class="layout-7">
+      </div>
+      <div class="layout-7">
         <img src="Bilder/Layout1_Kopie/Layout_1-7.jpg" />
-    </div>
+      </div>
 
-    <div class="layout-8">
+      <div class="layout-8">
         <img src="Bilder/Layout1_Kopie/Layout_1-8.jpg" />
+      </div>
+
+      <div class="layout-9">
+        <img src="Bilder/Layout1_Kopie/Layout_1-9.jpg" />
+      </div>
     </div>
 
-    <div class="layout-9">
-        <img src="Bilder/Layout1_Kopie/Layout_1-9.jpg" />
-    </div>
-</div>
+    <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Durch Recherche und Entwurfsprozess kann man ein Layout designen, das Designerleuchten passend und anregend darstellt. Dabei wurde Wert auf eine klare Struktur, Typografie und Bildanordnung gelegt. Der kompakte Katalog zeigt drei verschiedene Lampen, jede auf einer eigenen Doppelseite mit Hintergrundgeschichte und einem klaren, durchgängigen Aufbau. Die jeweiligen Designer werden in einer eigenen Infobox vorgestellt. Das Projekt verbindet Informationsdesign mit einer ästhetischen Präsentation und schafft einen ruhigen, wirkungsvollen Gesamteindruck. Das Dossier folgt das Ziel, Interesse und Bedeutung für Designobjekte, insbesondere für Leuchten, zu wecken.`,
+          title_project: "Designerleuchten layouten",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Through research and the design process, it is possible to create a layout that presents designer lighting in an appropriate and inspiring way. Emphasis was placed on clear structure, typography, and image arrangement. The compact catalog showcases three different lamps, each on its own double page with background information and a clear, consistent layout. The respective designers are presented in their own info box. The project combines information design with an aesthetic presentation and creates a calm, effective overall impression. The dossier aims to arouse interest and significance for design objects, especially for lamps.`,
+          title_project: "Layouting Designer Lights",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
-

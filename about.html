@@ -25,7 +25,8 @@
     <div class="nav_tomomiannasakai">
     <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
     <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
     
         </div>
   
@@ -45,12 +46,15 @@
     
     
     <div class="portfolio_text">
-        <p> Hallo! Ich bin Tomomi Anna Sakai, eine leidenschaftliche
+        <p data-key="text_info">
+        Hallo! Ich bin Tomomi Anna Sakai, eine leidenschaftliche
         Kommunikationsdesignerin mit einem Auge für kreative Lösungen. Mein Ziel
         ist es, durch Design bedeutungsvolle Geschichten zu erzählen und
         visuelle Erlebnisse zu schaffen, die Menschen inspirieren und verbinden. 
+        </p>
+        
     
-      </p>
+      
     </div>
      <div class="portfolio_text_info">
         <p>
@@ -68,16 +72,57 @@
       <img src="Bilder/Selbstportrait_2/Portrait.jpg"  />
       </div>
 
-       <h1 class="about_title">über mich</h1>
+       <h1 class="about_title" data-key="title_project">Über mich</h1>
       <div class="portfolio_blurry-image">
       <img
-        src="Bilder/Selbstportrait_2/Portrait_Body_Erweitert.jpg"
+        src="Bilder/Selbstportrait_2/Portrait_Body_Erweitert_DuoTone.jpg"
       />
     </div>
-      
-
 </div>
-    
+    <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Hallo! Ich bin Tomomi Anna Sakai, eine leidenschaftliche
+        Kommunikationsdesignerin mit einem Auge für kreative Lösungen. Mein Ziel
+        ist es, durch Design bedeutungsvolle Geschichten zu erzählen und
+        visuelle Erlebnisse zu schaffen, die Menschen inspirieren und verbinden. `,
+          title_project: "Über mich",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Hello! I'm Tomomi Anna Sakai, a passionate
+communication designer with an eye for creative solutions. My goal
+is to use design to tell meaningful stories and
+create visual experiences that inspire and connect people.`,
+          title_project: "About me",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
     
 
 

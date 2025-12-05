@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tomomi Anna Sakai" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio Tomomi</title>
+    <meta
+      name="description"
+      content="TEXT FÜR UNTERZEILE IN SUCHMASCHINEN HIER EINGEBEN"
+    />
+  </head>
+
+<script>
+  const nav = document.querySelector(".nav");
+  const firstSection = document.querySelector(".project-01-grid");
+
+  function checkScroll() {
+    const sectionBottom = firstSection.offsetTop + firstSection.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > sectionBottom - 20) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll();
+</script>
+
+
+
+  <body>
+
+<div class="fixed-menu-container nav">
+
+  <div class="nav_portfolio">
+    <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
+    <div class="nav_tomomiannasakai">
+    <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
+    
+    <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
+    
+        </div>
+  
+
+</div>
+
+
+  
+<div class="project-09-grid">
+
+   
+
+    <h1 class="portfolio_title" data-key="title_project">Zeitungsversion: Im Kopf fühlt sich alles anders an</h1>
+    <div class="portfolio_blurry-image">
+        <img src="Bilder/Zeitung Kopie/Zeitung-7.jpg" />
+    </div>
+    <div class="portfolio_text">
+        <p data-key="text_info">
+            Zusätzlich zum Plakat habe ich eine passende Zeitung gestaltet (oder: gelayoutet). Im gesamten Zeitungsstück ist der Satz „Passen oder Anpassen“ platziert. Auf den ersten beiden Seiten sieht man ein Chamäleon, das sich der Schrift im Hintergrund anpasst. Danach folgen drei Seiten, auf denen man zuschaut, dass es immer weniger und weniger Menschen im Office gibt, bis das Chamäleon alleine ist. Durch diese Spannung spürt man die Einsamkeit noch deutlicher als auf dem Plakat. Schlussendlich sieht man auf der letzten Seite direkt den Arbeitsplatz des Chamäleons. Es sind vier Bilder nacheinander, auf denen man auf dem Bildschirm den restlichen Satz liest.
+        </p>
+        
+
+    </div>
+
+    
+    
+    
+    <div class="zeitung-1">
+        <img src="Bilder/Zeitung Kopie/Zeitung-1.jpg" />
+    </div>
+    
+    <div class="zeitung-2">
+        <img src="Bilder/Zeitung Kopie/Zeitung-2.jpg" />
+    </div>
+    <div class="zeitung-3">
+        <img src="Bilder/Zeitung Kopie/Zeitung-3.jpg" />
+    </div>
+
+    <div class="zeitung-4">
+        <img src="Bilder/Zeitung Kopie/Zeitung-4.jpg" />
+    </div>
+
+    <div class="zeitung-5">
+        <img src="Bilder/Zeitung Kopie/Zeitung-5.jpg" />
+    </div>
+    
+    <div class="zeitung-6">
+        <img src="Bilder/Zeitung Kopie/Zeitung-6.jpg" />
+    </div>
+    <div class="zeitung-7">
+        <img src="Bilder/Zeitung Kopie/Zeitung-7.jpg" />
+    </div>
+
+     <div class="zeitung-8">
+        <img src="Bilder/Zeitung Kopie/Zeitung-8.jpg" />
+    </div>
+    <div class="zeitung-9">
+        <img src="Bilder/Zeitung Kopie/Zeitung-9.jpg" />
+    </div>
+
+   
+</div>
+
+<script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Zusätzlich zum Plakat habe ich eine passende Zeitung gestaltet. Im gesamten Zeitungsstück ist der Satz „Passen oder Anpassen“ platziert. Auf den ersten beiden Seiten sieht man ein Chamäleon, das sich der Schrift im Hintergrund anpasst. Danach folgen drei Seiten, auf denen man zuschaut, dass es immer weniger und weniger Menschen im Office gibt, bis das Chamäleon alleine ist. Durch diese Spannung spürt man die Einsamkeit noch deutlicher als auf dem Plakat. Schlussendlich sieht man auf der letzten Seite direkt den Arbeitsplatz des Chamäleons. Es sind vier Bilder nacheinander, auf denen man auf dem Bildschirm den restlichen Satz liest.`,
+          title_project: "Zeitungsversion: Im Kopf fühlt sich alles anders an",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `In addition to the poster, I designed a matching newspaper. The phrase “fit in or adapt” appears throughout the newspaper. On the first two pages, you see a chameleon that adapts to the font in the background. This is followed by three pages showing fewer and fewer people in the office until the chameleon is alone. This tension makes the loneliness even more palpable than on the poster. Finally, on the last page, you see the chameleon's workplace. There are four images in succession, on which you can read the rest of the sentence on the screen.`,
+         title_project: "Newspaper Version: Everything Feels Different in your Head",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
+  </body>
+</html>
+

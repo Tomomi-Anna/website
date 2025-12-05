@@ -24,10 +24,12 @@
     <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
     <div class="nav_tomomiannasakai">
     <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
+   
     <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
     
-        </div>
+        
   
 
 </div>
@@ -38,13 +40,16 @@
 
    
 
-    <h1 class="portfolio_title">Logo herstellen</h1>
+    <h1 class="portfolio_title" data-key="title_project">Logo herstellen</h1>
     <div class="portfolio_blurry-image">
         <img src="Bilder/riders/Endprodukt Riders_Seite_4 Kopie.jpg" />
     </div>
     <div class="portfolio_text">
-        <p>Riders. Made for humans, perfected for horses. Eine fiktive Firma, welche Sportausrüstung für Pferdereiter/innen und Pferden herstellt. Das Logo ist minimalistisch mit einer sportlichen und modernen Wirkung, die gut zur Marke passt. Es repräsentiert Bewegung, Kraft und Eleganz. Werte, welche ein/e Reiter /in gerne sieht. Die jeweiligen Farben sind Schwarz mir einen braunen Umriss, welche Stabilität aber auch Natürlichkeit zeigt. Alles zusammen ergibt sich schlussendlich ein klares Markenbild, welches Vertrauen und Qualität hinüberbringt.
-</p>
+        <p data-key="text_info">
+            Riders. Made for humans, perfected for horses. Eine fiktive Firma, welche Sportausrüstung für Pferdereiter/innen und Pferden herstellt. Das Logo ist minimalistisch mit einer sportlichen und modernen Wirkung, die gut zur Marke passt. Es repräsentiert Bewegung, Kraft und Eleganz. Werte, welche ein/e Reiter /in gerne sieht. Die jeweiligen Farben sind Schwarz mir einen braunen Umriss, welche Stabilität aber auch Natürlichkeit zeigt. Alles zusammen ergibt sich schlussendlich ein klares Markenbild, welches Vertrauen und Qualität hinüberbringt.
+
+        </p>
+        
     </div>
     
     
@@ -71,6 +76,47 @@
         <img src="Bilder/riders/Mockup Sattel Zoom Kopie.jpg" />
   
 </div>
+
+<script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Riders. Made for humans, perfected for horses. Eine fiktive Firma, welche Sportausrüstung für Pferdereiter/innen und Pferden herstellt. Das Logo ist minimalistisch mit einer sportlichen und modernen Wirkung, die gut zur Marke passt. Es repräsentiert Bewegung, Kraft und Eleganz. Werte, welche ein/e Reiter /in gerne sieht. Die jeweiligen Farben sind Schwarz mir einen braunen Umriss, welche Stabilität aber auch Natürlichkeit zeigt. Alles zusammen ergibt sich schlussendlich ein klares Markenbild, welches Vertrauen und Qualität hinüberbringt.`,
+          title_project: "Logo herstellen",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Riders. Made for humans, perfected for horses. A fictional company that manufactures sports equipment for horse riders and horses. The logo is minimalistic with a sporty and modern look that fits the brand well. It represents movement, strength, and elegance. Values, that riders appreciate. The colors are black with a brown outline, which conveys stability and naturalness. All of this ultimately results in a clear brand image that conveys trust and quality.
+
+`,
+          title_project: "Create a Logo",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
 

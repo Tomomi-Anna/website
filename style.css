@@ -8,6 +8,7 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  color: rgb(75, 75, 75);
 }
 
 img {
@@ -37,12 +38,12 @@ img {
 .portfolio_title {
   font-family: "Fragment Mono", sans-serif;
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  color: rgb(244, 244, 244);
   text-align: center;
   position: absolute;
-  top: 500px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%); 
+  transform: translate(-50%, -50%);
   z-index: 10;
   margin: 0;
 }
@@ -50,7 +51,7 @@ img {
 .portfolio_blurry-image {
   grid-area: blurry;
   margin-bottom: 250px;
-  margin-top: 250px;
+  margin-top: 200px;
   background-size: cover;
   background-position: top;
   position: relative; 
@@ -72,7 +73,7 @@ img {
   padding: 50px 0;
   grid-area: text; 
   z-index: 10;
-   margin-top: 300px;
+  margin-top: 350px;
   margin-bottom: 200px; 
 
   
@@ -85,11 +86,21 @@ img {
   padding: 15px;
   grid-area: text_info; 
   z-index: 10;
-  margin-top: 0px;
+  margin-top: -150px;
   margin-bottom: 200px;
   
 }
 
+.text_info {
+   font-family: "Fragment Mono", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 50px 0;
+  grid-area: text; 
+  z-index: 10;
+  margin-top: 200px;
+  margin-bottom: 200px; 
+}
 
 
 .home-grid {
@@ -118,7 +129,7 @@ img {
 }
 
 .nav_portfolio:hover {
-  text-decoration-color: black; 
+  text-decoration-color: rgb(16, 16, 16); 
 }
 
 
@@ -136,7 +147,7 @@ img {
 }
 
 .nav_tomomiannasakai:hover {
-  text-decoration-color: black; 
+  text-decoration-color: rgb(16, 16, 16); 
 }
 
 .nav_de-en {
@@ -152,7 +163,7 @@ img {
 }
 
 .nav_de-en:hover {
-  text-decoration-color: black; 
+  text-decoration-color: rgb(16, 16, 16); 
 }
 
 
@@ -161,7 +172,7 @@ img {
 .unterstrichen-wort:link, 
 .unterstrichen-wort:visited {
 
-    color: black; 
+    color: rgb(16, 16, 16); 
     text-decoration: none; 
     text-decoration: underline; 
     text-decoration-color: transparent; 
@@ -170,14 +181,14 @@ img {
 .unterstrichen-wort:focus {
     
     text-decoration-color: transparent; 
-    color: black; 
+    color: rgb(16, 16, 16); 
 }
 .unterstrichen-wort:hover {
-    text-decoration-color: black;
+    text-decoration-color: rgb(16, 16, 16);
 }
 
 
-.fixed-menu-container {
+/* .fixed-menu-container {
     position: fixed;
     top: 0; 
     left: 0; 
@@ -185,7 +196,16 @@ img {
     z-index: 20; 
     border-bottom: 60px solid rgb(255, 255, 255); 
     background-color: white; 
+} */
+
+
+.unterstrichen-wort {
+  font-family: 'Fragment Mono', monospace;
+  font-size: 16px; /* oder dein alter Wert */
+  text-decoration: underline;
+  color: inherit; /* übernimmt die Farbe des Menüs */
 }
+
 
 
 /* =======================================
@@ -279,9 +299,9 @@ img {
   color: rgb(255, 255, 255);
   text-align: center;
   position: absolute;
-  top: 500px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%); 
+  transform: translate(-50%, -50%);
   z-index: 10;
   margin: 0;
 }
@@ -789,4 +809,67 @@ img {
     grid-area: hapek-8; 
     margin-bottom: 25px;
 }
-    
+/* =======================================
+  Zeitung STYLES
+======================================= */
+.project-09-grid {
+    display: grid; 
+    padding-top: 150px; 
+    /* 💡 KORREKTUR: 1fr | Auto-Spalte mit max. Breite | 1fr für flexibles Zentrieren */
+    grid-template-columns: 1fr minmax(auto, 800px) 1fr; 
+    gap: 0; 
+    /* 💡 KORREKTUR: Wir ändern die Namen der Areas entsprechend */
+    grid-template-areas: 
+    "blurry blurry blurry"
+    ". text ."
+    ". zeitung-1 ."
+    ". zeitung-2 ."
+    ". zeitung-3 ."
+    ". zeitung-4 ."
+    ". zeitung-5 ."
+    ". zeitung-7 ."
+    ". zeitung-6 ."
+    ". zeitung-8 ."
+    ". zeitung-9 ."
+    ;
+}
+
+.zeitung-1 {
+    grid-area: zeitung-1;
+    margin-bottom: 25px;
+   
+}
+.zeitung-2 {
+    grid-area: zeitung-2;
+    margin-bottom: 25px;
+}
+.zeitung-3 {
+    grid-area: zeitung-3;
+    margin-bottom: 25px;
+}
+.zeitung-4 {
+    grid-area: zeitung-4;
+    margin-bottom: 25px;
+}
+.zeitung-5 {
+    grid-area: zeitung-5;
+    margin-bottom: 25px;
+}
+.zeitung-6 {
+    grid-area: zeitung-6;
+    margin-bottom: 25px;
+}
+.zeitung-7 {
+    grid-area: zeitung-7; 
+    margin-bottom: 25px;
+}
+
+.zeitung-8 {
+    grid-area: zeitung-8; 
+    margin-bottom: 25px;
+}
+
+.zeitung-9 {
+    grid-area: zeitung-9; 
+    margin-bottom: 25px;
+}

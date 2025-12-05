@@ -24,10 +24,9 @@
     <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
     <div class="nav_tomomiannasakai">
     <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
+   <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
   
 
 </div>
@@ -38,9 +37,9 @@
 
    
 
-    <h1 class="portfolio_title">TYPO im Raum</h1>
+    <h1 class="portfolio_title" data-key="title_project">TYPO im Raum</h1>
     <div class="portfolio_blurry-image">
-        <img src="Bilder/Tomomi_Sakai_Bildserie_JPEGs Kopie/Bild3_Tomomi_Sakai Kopie.jpg" />
+        <img src="Bilder/Tomomi_Sakai_Bildserie_JPEGs Kopie/Bild3_Cover.jpg" />
         
     </div>
     
@@ -58,20 +57,55 @@
     
 
     <div class="portfolio_text">
-        <p>Ich habe eine Variante ausprobiert, wie man Typo im Raum zeigen kann. Auf drei Fotos sieht man die Buchstaben in Bewegung. Zuerst sind sie in der falschen Reihenfolge, doch dann drehen sie sich und bilden am Ende das Wort «Typo». Das Ganze passiert in der Luft, damit der Fokus wirklich auf den Formen liegt. Die Buchstaben sind farbig gestaltet, damit man sie besser unterscheiden kann und das Gesamtbild lebendiger wirkt. </p>
+         <p data-key="text_info">
+                Ich habe eine Variante ausprobiert, wie man Typo im Raum zeigen kann. Auf drei Fotos sieht man die Buchstaben in Bewegung. Zuerst sind sie in der falschen Reihenfolge, doch dann drehen sie sich und bilden am Ende das Wort «Typo». Das Ganze passiert in der Luft, damit der Fokus wirklich auf den Formen liegt. Die Buchstaben sind farbig gestaltet, damit man sie besser unterscheiden kann und das Gesamtbild lebendiger wirkt. 
+         </p>
+    
     </div>
     
  
 </div>
-    
-    
-
-
-
-    
-
-      </div>
+</div>
     </div>
+
+    <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Ich habe eine Variante ausprobiert, wie man Typo im Raum zeigen kann. Auf drei Fotos sieht man die Buchstaben in Bewegung. Zuerst sind sie in der falschen Reihenfolge, doch dann drehen sie sich und bilden am Ende das Wort «Typo». Das Ganze passiert in der Luft, damit der Fokus wirklich auf den Formen liegt. Die Buchstaben sind farbig gestaltet, damit man sie besser unterscheiden kann und das Gesamtbild lebendiger wirkt.`,
+          title_project: "TYPO im Raum",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `I tried out a variation on how to show typos in space. In three photos, you can see the letters in motion. At first, they are in the wrong order, but then they rotate and ultimately form the word “typo.” The whole thing happens in the air so that the focus is really on the shapes. The letters are colored so that they are easier to distinguish and the overall picture appears more lively. `,
+          title_project: "TYPO in the Room",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
 

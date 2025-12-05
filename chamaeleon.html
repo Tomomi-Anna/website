@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,65 +17,154 @@
       content="TEXT FÜR UNTERZEILE IN SUCHMASCHINEN HIER EINGEBEN"
     />
   </head>
+
   <body>
+    <div class="fixed-menu-container nav">
+      <div class="nav_portfolio">
+        <a href="index.html" class="unterstrichen-wort" data-key="nav_portfolio"
+          >Portfolio</a
+        >
+      </div>
 
-<div class="fixed-menu-container">
-  <div class="nav_portfolio">
-    <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
-    <div class="nav_tomomiannasakai">
-    <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
-  
+      <div class="nav_tomomiannasakai">
+        <a href="about.html" class="unterstrichen-wort" data-key="nav_about"
+          >Tomomi Anna Sakai</a
+        >
+      </div>
 
-</div>
-
-
-  
-<div class="project-01-grid">
-
-   
-
-    <h1 class="portfolio_title">Im Kopf fühlt sich alles anders an</h1>
-    <div class="portfolio_blurry-image">
-        <img src="Bilder/Blickwechsel-2/Blickwechsel-3 Kopie.jpg" />
-        
-    </div>
-    
-    <div class="portfolio_blickwechselentwurf">
-        <img src="Bilder/Sakai_Tomomi_Blickwechselentwurf_2025.jpg" />
-    </div>
-    
-    <div class="portfolio_text">
-        <p>Hast du dich je an einer Gruppe angeschlossen, doch dich anders als alle anderen gefühlt? Hier habe ich es gestalterisch auf einem Plakat gestaltet, wobei ich möglichst versucht habe, ohne Worte es dem Zuschauer zu übermitteln. Die Chamäleons sind eine berühmte Symbolik dafür, sich anzupassen und dadurch zu verstecken. Diese Symbolik habe ich dann so ausgenutzt, indem ich das Chamäleon in einer modernen Situation hineingesteckt habe. Denn so kann das Publikum auch, falls es zu ihrer Situation passt, sich betroffen und verbunden fühlen.</p>
-    </div>
-    
-    <div class="portfolio_citylightmockup-1">
-        <img src="Bilder/Blickwechsel-2/Blickwechsel.jpg" />
-    </div>
-    
-    <div class="portfolio_citylightmockup-2">
-        <img src="Bilder/Blickwechsel-2/Blickwechsel-2.jpg" />
-    </div>
-    <div class="portfolio_citylightmockup-3">
-        <img src="Bilder/Blickwechsel-2/Blickwechsel-4.jpg" />
-    </div>
-
-    <div class="portfolio_citylightmockup-4">
-        <img src="Bilder/Blickwechsel-2/Blickwechsel-3.jpg" />
-    </div>
-</div>
-    
-    
-
-
-
-    
-
+      <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
       </div>
     </div>
+
+    <div class="project-01-grid">
+      <div class="text_info">
+        <p data-key="text_info">
+          Hast du dich je an einer Gruppe angeschlossen, doch dich anders als
+          alle anderen gefühlt? Hier habe ich es gestalterisch auf einem Plakat
+          gestaltet, wobei ich möglichst versucht habe, ohne Worte es dem
+          Zuschauer zu übermitteln. Die Chamäleons sind eine berühmte Symbolik
+          dafür, sich anzupassen und dadurch zu verstecken. Diese Symbolik habe
+          ich dann so ausgenutzt, indem ich das Chamäleon in einer modernen
+          Situation hineingesteckt habe. Denn so kann das Publikum auch, falls
+          es zu ihrer Situation passt, sich betroffen und verbunden fühlen.
+        </p>
+      </div>
+
+      <h1 class="portfolio_title" data-key="title_project">
+        Im Kopf fühlt sich alles anders an
+      </h1>
+
+      <div class="portfolio_blurry-image">
+        <img src="Bilder/Blickwechsel-2/chameleon_cover.png" />
+      </div>
+
+      <div class="portfolio_blickwechselentwurf">
+        <img src="Bilder/Sakai_Tomomi_Blickwechselentwurf_2025.jpg" />
+      </div>
+
+      <div class="portfolio_citylightmockup-1">
+        <img src="Bilder/Blickwechsel-2/Blickwechsel.jpg" />
+      </div>
+
+      <div class="portfolio_citylightmockup-2">
+        <img src="Bilder/Blickwechsel-2/Blickwechsel-2.jpg" />
+      </div>
+
+      <div class="portfolio_citylightmockup-3">
+        <img src="Bilder/Blickwechsel-2/Blickwechsel-4.jpg" />
+      </div>
+
+      <div class="portfolio_citylightmockup-4">
+        <img src="Bilder/Blickwechsel-2/Blickwechsel-3.jpg" />
+      </div>
+    </div>
+
+    <!-- ---------------------------------------- -->
+    <!-- SCRIPTS AM ENDE DES BODY -->
+    <!-- ---------------------------------------- -->
+    <!-- <script>
+      // Scroll-Farbe für die Navigation
+      const nav = document.querySelector(".nav");
+      const firstSection = document.querySelector(".project-01-grid");
+
+      function checkScroll() {
+        const firstSection = document.querySelector(".project-01-grid");
+        const nav = document.querySelector(".nav");
+
+        const sectionTop = firstSection.offsetTop;
+        const sectionBottom = sectionTop + firstSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        // Berechne, wie weit wir über die Section hinaus gescrollt haben (0 bis 1)
+        let progress =
+          (scrollPosition - sectionTop) / (sectionBottom - sectionTop);
+        progress = Math.min(Math.max(progress, 0), 1); // zwischen 0 und 1
+
+        // Übergang von weiß zu schwarz
+        nav.style.backgroundColor = `rgba(255, 255, 255, ${progress})`;
+        nav.style.color = `rgb(${Math.round(
+          255 - 255 * progress
+        )}, ${Math.round(255 - 255 * progress)}, ${Math.round(
+          255 - 255 * progress
+        )})`;
+
+        // Optional: Box-Shadow ab einem gewissen Punkt
+    //     nav.style.boxShadow =
+    //       progress > 0.1 ? "0 2px 5px rgba(0,0,0,0.1)" : "none";
+    //   }
+
+      window.addEventListener("scroll", checkScroll);
+      checkScroll();
+    </script> -->
+
+    <script>
+      // Sprach-Toggle
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Hast du dich je an einer Gruppe angeschlossen, doch dich anders als alle anderen gefühlt? 
+      Hier habe ich es gestalterisch auf einem Plakat gestaltet, wobei ich möglichst versucht habe, 
+      ohne Worte es dem Zuschauer zu übermitteln. Die Chamäleons sind eine berühmte Symbolik dafür, 
+      sich anzupassen und dadurch zu verstecken. Diese Symbolik habe ich dann so ausgenutzt, indem ich 
+      das Chamäleon in einer modernen Situation hineingesteckt habe. Denn so kann das Publikum auch, 
+      falls es zu ihrer Situation passt, sich betroffen und verbunden fühlen.`,
+          title_project: "Im Kopf fühlt sich alles anders an",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Have you ever joined a group but felt different from everyone else? 
+      In this poster design, I tried to communicate that feeling visually without using words. 
+      Chameleons are a well-known symbol for adaptation and hiding. 
+      I used this symbolism by placing the chameleon in a modern situation. 
+      This way, the audience can relate to it if it reflects their own experiences.`,
+          title_project: "In My Head, Everything Feels Different",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
-
+}

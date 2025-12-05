@@ -18,68 +18,110 @@
     />
   </head>
   <body>
+    <div class="fixed-menu-container">
+      <div class="nav_portfolio">
+        <a href="index.html" class="unterstrichen-wort">Portfolio</a>
+      </div>
+      <div class="nav_tomomiannasakai">
+        <a href="about.html" class="unterstrichen-wort">Tomomi Anna Sakai</a>
+      </div>
+      <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
+    </div>
 
-<div class="fixed-menu-container">
-  <div class="nav_portfolio">
-    <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
-    <div class="nav_tomomiannasakai">
-    <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
-  
-
-</div>
-
-
-  
-<div class="project-05-grid">
-
-   
-
-    <h1 class="portfolio_title">Einen Ort in einer Geschichte Layouten</h1>
-    <div class="portfolio_blurry-image">
+    <div class="project-05-grid">
+      <h1 class="portfolio_title" data-key="title_project">
+        Einen Ort in einer Geschichte Layouten
+      </h1>
+      <div class="portfolio_blurry-image">
         <img src="Bilder/Parisprojekt/Bild_1 Kopie.jpg" />
-    </div>
-    <div class="portfolio_text">
-        <p>Wie kann eine einzige Erfahrung die Sichtweise einer Person in kurzer Zeit verändern?
-         Im Journal des sens (Tagebuch der Sinne) berichtet die Autorin von ihrer Reise nach Paris, wo sie den „Place des Victoires” bewundert. Sie hält ihre Eindrücke in zahlreichen Fotos, Zeichnungen und Notizen fest. Im Laufe der Tage fallen ihre Details auf, die oft übersehen werden, wie zum Beispiel versteckten Gebäuden, die im Lärm der Stadt untergehen. Darüber hinaus entdeckt sie die Vielfalt der Einwohner, von denen jeder seine eigene Geschichte hat. Dieses Tagebuch beschränkt sich nicht darauf, ihre Beobachtungen wiederzugeben, sondern zeigt auch, wie sich ihre Sicht auf die Stadt und das Leben im Laufe der Zeit verändert, begleitet von ihren persönlichen Reflexionen.</p>
-    </div>
-    
-    
-    <div class="bild_paris-1">
+      </div>
+      <div class="portfolio_text">
+        <p data-key="text_info">
+          Wie kann eine einzige Erfahrung die Sichtweise einer Person in kurzer
+          Zeit verändern? Im Journal des sens (Tagebuch der Sinne) berichtet die
+          Autorin von ihrer Reise nach Paris, wo sie den „Place des Victoires”
+          bewundert. Sie hält ihre Eindrücke in zahlreichen Fotos, Zeichnungen
+          und Notizen fest. Im Laufe der Tage fallen ihre Details auf, die oft
+          übersehen werden, wie zum Beispiel versteckten Gebäuden, die im Lärm
+          der Stadt untergehen. Darüber hinaus entdeckt sie die Vielfalt der
+          Einwohner, von denen jeder seine eigene Geschichte hat. Dieses
+          Tagebuch beschränkt sich nicht darauf, ihre Beobachtungen
+          wiederzugeben, sondern zeigt auch, wie sich ihre Sicht auf die Stadt
+          und das Leben im Laufe der Zeit verändert, begleitet von ihren
+          persönlichen Reflexionen.
+        </p>
+      </div>
+
+      <div class="bild_paris-1">
         <img src="Bilder/Parisprojekt/Bild_1.jpg" />
-    </div>
-    
-    <div class="bild_paris-2">
+      </div>
+
+      <div class="bild_paris-2">
         <img src="Bilder/Parisprojekt/Bild_2.jpg" />
-    </div>
-    <div class="bild_paris-3">
+      </div>
+      <div class="bild_paris-3">
         <img src="Bilder/Parisprojekt/Bild_3.jpg" />
-    </div>
+      </div>
 
-    <div class="bild_paris-4">
+      <div class="bild_paris-4">
         <img src="Bilder/Parisprojekt/Bild_4.jpg" />
-    </div>
+      </div>
 
-    <div class="bild_paris-5">
+      <div class="bild_paris-5">
         <img src="Bilder/Parisprojekt/Bild_5.jpg" />
-    </div>
-    
-    <div class="bild_paris-6">
+      </div>
+
+      <div class="bild_paris-6">
         <img src="Bilder/Parisprojekt/Bild_5.jpg" />
-    </div>
-    <div class="bild_paris-7">
+      </div>
+      <div class="bild_paris-7">
         <img src="Bilder/Parisprojekt/Bild_7.jpg" />
-    </div>
+      </div>
 
-    <div class="bild_paris-8">
+      <div class="bild_paris-8">
         <img src="Bilder/Parisprojekt/Bild_8.jpg" />
+      </div>
     </div>
 
+    <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Wie kann eine einzige Erfahrung die Sichtweise einer Person in kurzer Zeit verändern? Im Journal des sens (Tagebuch der Sinne) berichtet die Autorin von ihrer Reise nach Paris, wo sie den „Place des Victoires” bewundert. Sie hält ihre Eindrücke in zahlreichen Fotos, Zeichnungen und Notizen fest. Im Laufe der Tage fallen ihre Details auf, die oft übersehen werden, wie zum Beispiel versteckten Gebäuden, die im Lärm der Stadt untergehen. Darüber hinaus entdeckt sie die Vielfalt der Einwohner, von denen jeder seine eigene Geschichte hat. Dieses Tagebuch beschränkt sich nicht darauf, ihre Beobachtungen wiederzugeben, sondern zeigt auch, wie sich ihre Sicht auf die Stadt und das Leben im Laufe der Zeit verändert, begleitet von ihren persönlichen Reflexionen.`,
+          title_project: "Einen Ort in einer Geschichte Layouten",
+        },
 
-</div>
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `How can a single experience change a person's perspective in such a short time? In Journal des sens (Diary of the Senses), the author recounts her trip to Paris, where she admires the Place des Victoires. She captures her impressions in numerous photos, drawings, and notes. As the days go by, she notices details that are often overlooked, such as hidden buildings that are lost in the noise of the city. She also discovers the diversity of the inhabitants, each of whom has their own story. This diary is not limited to recounting her observations, but also shows how her view of the city and life changes over time, accompanied by her personal reflections.`,
+          title_project: "Layouting a Location in a Story",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
-

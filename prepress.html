@@ -24,10 +24,9 @@
     <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
     <div class="nav_tomomiannasakai">
     <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
+ <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
   
 
 </div>
@@ -38,17 +37,18 @@
 
    
 
-    <h1 class="portfolio_title">Luzerner Postkarten
+    <h1 class="portfolio_title" data-key="title_project">Luzerner Postkarten
     </h1>
     <div class="portfolio_blurry-image">
-        <img src="Bilder/Prepress Kopie/Prepress-2.jpg" />
+        <img src="Bilder/Prepress Kopie/Prepress-2 Kopie.jpg" />
         
     </div>
     
-    <
+    
     
     <div class="portfolio_text">
-        <p>Drei verschiedene Postkartensujets zeigen drei verschiedene Wege, um Luzern auf einer Postkarte darzustellen: die ikonische Luzerner Fasnacht, das bekannte Verkehrshaus und das beeindruckende Bahnhofsportal. Jedes Sujet vermittelt eine eigene Sicht auf die Stadt und hebt ihre Vielfalt hervor. Obwohl sie das gleiche Thema haben, wirken sie ganz unterschiedlich und zeigen Luzern auf ihre eigene Art. Die Karten wurden hauptsächlich digital gestaltet, mit vielen verschiedenen Techniken, wodurch jede Postkarte ihren ganz eigenen Charakter bekommt und sich von den anderen abhebt.</p>
+        <p data-key="text_info">
+            Drei verschiedene Postkartensujets zeigen drei verschiedene Wege, um Luzern auf einer Postkarte darzustellen: die ikonische Luzerner Fasnacht, das bekannte Verkehrshaus und das beeindruckende Bahnhofsportal. Jedes Sujet vermittelt eine eigene Sicht auf die Stadt und hebt ihre Vielfalt hervor. Obwohl sie das gleiche Thema haben, wirken sie ganz unterschiedlich und zeigen Luzern auf ihre eigene Art. Die Karten wurden hauptsächlich digital gestaltet, mit vielen verschiedenen Techniken, wodurch jede Postkarte ihren ganz eigenen Charakter bekommt und sich von den anderen abhebt.</p>
     </div>
     
     <div class="portfolio_Prepress-1">
@@ -64,15 +64,47 @@
 
     
 </div>
-    
-    
-
-
-
-    
-
-      </div>
+     </div>
     </div>
+
+     <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Drei verschiedene Postkartensujets zeigen drei verschiedene Wege, um Luzern auf einer Postkarte darzustellen: die ikonische Luzerner Fasnacht, das bekannte Verkehrshaus und das beeindruckende Bahnhofsportal. Jedes Sujet vermittelt eine eigene Sicht auf die Stadt und hebt ihre Vielfalt hervor. Obwohl sie das gleiche Thema haben, wirken sie ganz unterschiedlich und zeigen Luzern auf ihre eigene Art. Die Karten wurden hauptsächlich digital gestaltet, mit vielen verschiedenen Techniken, wodurch jede Postkarte ihren ganz eigenen Charakter bekommt und sich von den anderen abhebt.`,
+          title_project: "Luzerner Postkarten",
+        },
+
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Three different postcard motifs show three different ways of depicting Lucerne on a postcard: the iconic Lucerne Carnival, the famous Swiss Museum of Transport, and the impressive railway station portal. Each subject conveys its own view of the city and highlights its diversity. Although they have the same theme, they appear very different and show Lucerne in their own unique way. The cards were mainly designed digitally, using many different techniques, giving each postcard its own character and making it stand out from the others.`,
+          title_project: "Lucerne Postcards",
+        },
+      };
+
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
 

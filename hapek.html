@@ -18,69 +18,106 @@
     />
   </head>
   <body>
+    <div class="fixed-menu-container">
+      <div class="nav_portfolio">
+        <a href="index.html" class="unterstrichen-wort">Portfolio</a>
+      </div>
+      <div class="nav_tomomiannasakai">
+        <a href="about.html" class="unterstrichen-wort">Tomomi Anna Sakai</a>
+      </div>
+      <div class="nav_de-en">
+        <a href="#" id="toggleLangBtn" class="unterstrichen-wort">EN</a>
+      </div>
+    </div>
 
-<div class="fixed-menu-container">
-  <div class="nav_portfolio">
-    <a href="index.html" class="unterstrichen-wort" >Portfolio</a> </div>
-    <div class="nav_tomomiannasakai">
-    <a href="about.html" class="unterstrichen-wort" >Tomomi Anna Sakai</a> </div>
-    <div class="nav_de-en">
-    <a href="de-en.html" class="unterstrichen-wort" >DE/EN</a> </div>
-    
-        </div>
-  
+    <div class="project-08-grid">
+      <h1 class="portfolio_title" data-key="title_project">
+        Die Entstehung einer eigenen Schrift
+      </h1>
+      <div class="portfolio_blurry-image">
+        <img src="Bilder/Hapek/Endprodukt Kopie.jpg" />
+      </div>
+      <div class="portfolio_text">
+        <p data-key="text_info">
+          Die Schrift, welche ich designt habe, sieht stark und auffällig aus.
+          Die dicken, dunklen Buchstaben wirken schwer, aber trotzdem spannend.
+          Durch die runden Formen und kleinen Unterschiede merkt man, dass sie
+          von Hand gemacht ist. Sie wirkt gleichzeitig ordentlich und doch ein
+          bisschen frei. Manche Buchstaben erinnern an alte Schilder oder
+          Maschinen, aber sie hat trotzdem etwas Eigenes. Mir gefällt, dass sie
+          kraftvoll aussieht, ohne zu streng zu sein – irgendwie ruhig, aber
+          trotzdem lebendig.
+        </p>
+      </div>
 
-</div>
-
-
-  
-<div class="project-08-grid">
-
-   
-
-    <h1 class="portfolio_title">Die Entstehung einer eigenen Schrift </h1>
-    <div class="portfolio_blurry-image">
+      <div class="hapek-1">
         <img src="Bilder/Hapek/Endprodukt.jpg" />
-    </div>
-    <div class="portfolio_text">
-        <p>Die Schrift, welche ich designt habe, sieht stark und auffällig aus. Die dicken, dunklen Buchstaben wirken schwer, aber trotzdem spannend. Durch die runden Formen und kleinen Unterschiede merkt man, dass sie von Hand gemacht ist. Sie wirkt gleichzeitig ordentlich und doch ein bisschen frei. Manche Buchstaben erinnern an alte Schilder oder Maschinen, aber sie hat trotzdem etwas Eigenes. Mir gefällt, dass sie kraftvoll aussieht, ohne zu streng zu sein – irgendwie ruhig, aber trotzdem lebendig.
-</p>
-    </div>
-    
-    
-    <div class="hapek-1">
-        <img src="Bilder/Hapek/Endprodukt.jpg" />
-    </div>
-    
-    <div class="hapek-2">
+      </div>
+
+      <div class="hapek-2">
         <img src="Bilder/Hapek/Skizzen_Seite_6.jpg" />
-    </div>
-    <div class="hapek-3">
+      </div>
+      <div class="hapek-3">
         <img src="Bilder/Hapek/Skizzen_Seite_7.jpg" />
-    </div>
+      </div>
 
-    <div class="hapek-4">
+      <div class="hapek-4">
         <img src="Bilder/Hapek/Skizzen_Seite_1.jpg" />
-    </div>
+      </div>
 
-    <div class="hapek-5">
+      <div class="hapek-5">
         <img src="Bilder/Hapek/Skizzen_Seite_2.jpg" />
-    </div>
-    
-    <div class="hapek-6">
+      </div>
+
+      <div class="hapek-6">
         <img src="Bilder/Hapek/Skizzen_Seite_3.jpg" />
-    </div>
-    <div class="hapek-7">
+      </div>
+      <div class="hapek-7">
         <img src="Bilder/Hapek/Skizzen_Seite_4.jpg" />
-    </div>
+      </div>
 
-    <div class="hapek-8">
+      <div class="hapek-8">
         <img src="Bilder/Hapek/Skizzen_Seite_5.jpg" />
+      </div>
     </div>
 
+    <script>
+      const translations = {
+        de: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `Die Schrift, welche ich designt habe, sieht stark und auffällig aus. Die dicken, dunklen Buchstaben wirken schwer, aber trotzdem spannend. Durch die runden Formen und kleinen Unterschiede merkt man, dass sie von Hand gemacht ist. Sie wirkt gleichzeitig ordentlich und doch ein bisschen frei. Manche Buchstaben erinnern an alte Schilder oder  Maschinen, aber sie hat trotzdem etwas Eigenes. Mir gefällt, dass sie kraftvoll aussieht, ohne zu streng zu sein – irgendwie ruhig, aber trotzdem lebendig.`,
+          title_project: "Die Entstehung einer eigenen Schrift",
+        },
 
+        en: {
+          nav_portfolio: "Portfolio",
+          nav_about: "Tomomi Anna Sakai",
+          text_info: `The font I designed looks strong and striking. The thick, dark letters appear heavy, yet exciting. The rounded shapes and small differences reveal that it is hand-made. It looks neat and tidy, yet a little free-spirited. Some letters are reminiscent of old signs or machines, but it still has something unique about it. I like that it looks powerful without being too severe—somehow calm, yet lively.`,
+          title_project: "The Creation of a Unique Font",
+        },
+      };
 
-</div>
+      let currentLang = "de";
+
+      document
+        .getElementById("toggleLangBtn")
+        .addEventListener("click", (event) => {
+          event.preventDefault(); // verhindert das normale Link-Verhalten
+
+          currentLang = currentLang === "de" ? "en" : "de";
+
+          const elements = document.querySelectorAll("[data-key]");
+
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-key");
+            el.textContent = translations[currentLang][key];
+          });
+
+          // Button-Text ändern
+          document.getElementById("toggleLangBtn").textContent =
+            currentLang === "de" ? "EN" : "DE";
+        });
+    </script>
   </body>
 </html>
-
